@@ -35,4 +35,4 @@ Once complete, the application is accessible through the server's IP on port 80.
 
 ---
 
-Happy deploying! 🚀
+
