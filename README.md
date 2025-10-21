@@ -1,38 +1,57 @@
 # hng-stage1-deploy
+Automated Deployment Script
 
-This project automates the deployment of a web application to a remote server using Docker and Nginx.
+Project Overview:
+This project demonstrates a complete automated deployment workflow for a web application using Bash scripting, Docker, and Nginx. It is designed to simplify server setup, container deployment, and web server configuration in a single step, making it beginner-friendly and easy to follow.
 
-## How It Works
+Key Features:
 
-1. **Deploy the Application**
-   - Connect to the remote server via SSH.
-   - Install necessary packages: Docker and Nginx.
-   - Upload the application files from your local machine to the server.
-   - Build a Docker image of the application.
-   - Run the Docker container.
-   - Configure Nginx as a reverse proxy to route traffic to the application container on port 8080.
+Automated Server Setup: Updates and installs required packages such as Nginx and Docker.
 
-Once complete, the application is accessible through the server's IP on port 80.
+Docker Integration: Builds and runs a Docker container for the web application.
 
-## Features
+Nginx Reverse Proxy: Configures Nginx to serve the application on port 80 with proper proxy headers.
 
-- Fully automated deployment script
-- Dockerized application
-- Nginx reverse proxy configuration
-- Logs saved to `deployment.log` for monitoring
+Single-step Deployment: Everything is handled by a single deploy.sh script.
 
-## Requirements
+Beginner-Friendly: Each step is automated, with clear feedback messages in the terminal.
 
-- Ubuntu 22.04 or later
-- Docker installed on server
-- Nginx installed on server
-- SSH access to the server
+How It Works:
 
-## Notes
+The script updates and upgrades the server packages.
 
-- Make sure to replace `proxy_pass` in the Nginx configuration with the correct container port if it changes.
-- A system restart may be required after package installations for kernel updates.
+Installs and starts Docker and Nginx services.
 
----
+Builds a Docker image from the project files.
+
+Runs the Docker container and exposes it to a designated port.
+
+Configures Nginx to act as a reverse proxy for the running container.
+
+Reloads Nginx and confirms that the application is accessible through the server IP.
+
+Usage:
+
+Make the script executable:
+
+chmod +x deploy.sh
 
 
+Run the deployment script:
+
+./deploy.sh
+
+
+Visit your server’s IP in a web browser to confirm the application is running.
+
+Learning Outcomes:
+
+Understanding Bash scripting for automation.
+
+Hands-on experience with Docker containerization.
+
+Configuring Nginx as a reverse proxy.
+
+Automating deployment workflows for web applications.
+
+This project is an excellent starting point for anyone looking to learn deployment automation, containerization, and web server configuration in a practical, hands-on way.
